@@ -1,0 +1,23 @@
+//remember to set the relay pin to D8. Connect the active wire to NOCO.
+const int relay = 8;
+const int relay2 = 9;
+
+void setup() {
+  //relay module output pins
+  pinMode(relay, OUTPUT);
+  pinMode(relay2, OUTPUT);
+}
+
+void loop() {
+  //one second of activation, the relay disconnects. This will be repeated.
+    digitalWrite(relay, HIGH);
+    delay(80);
+    digitalWrite(relay, LOW);
+    delay(80);
+    Serial.println("DISCONNECT");
+    digitalWrite(relay2, HIGH);
+    delay(80);
+    digitalWrite(relay2, LOW);
+    delay(80);
+    Serial.println("DISCONNECTDISCONNECT");  
+    }
